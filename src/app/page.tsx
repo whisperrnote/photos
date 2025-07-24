@@ -15,21 +15,21 @@ export default function HomePage() {
       </Typography>
 
       <Grid container spacing={4} justifyContent="center" sx={{ my: 4 }}>
-        <Grid item xs={12} sm={4}>
+        <Grid size={{ xs: 12, sm: 4 }}>
           <FeatureCard
             icon={<CodeIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />}
             title="Open Source"
             description="Transparent, community-driven development. Fork, contribute, and make it yours."
           />
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid size={{ xs: 12, sm: 4 }}>
           <FeatureCard
             icon={<StorageIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />}
             title="Scalable"
             description="Handles your photo library, big or small. Built for performance and reliability."
           />
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid size={{ xs: 12, sm: 4 }}>
           <FeatureCard
             icon={<PublicIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />}
             title="Decentralized"
