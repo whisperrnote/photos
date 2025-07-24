@@ -1,95 +1,72 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Container from '@mui/material/Container';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
+import CodeIcon from '@mui/icons-material/Code';
+import StorageIcon from '@mui/icons-material/Storage';
+import PublicIcon from '@mui/icons-material/Public';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <Container maxWidth="md" sx={{ py: 6 }}>
+      <AppBar position="static" color="default" elevation={0} sx={{ mb: 4 }}>
+        <Toolbar>
+          <PublicIcon sx={{ fontSize: 40, mr: 2 }} />
+          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+            Photos
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <Typography variant="h4" align="center" gutterBottom>
+        The Open Source, Scalable, Decentralized Alternative to Google Photos
+      </Typography>
+
+      <Grid container spacing={4} justifyContent="center" sx={{ my: 4 }}>
+        <Grid item xs={12} sm={4}>
+          <Card variant="outlined">
+            <CardContent sx={{ textAlign: 'center' }}>
+              <CodeIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />
+              <Typography variant="h6" gutterBottom>Open Source</Typography>
+              <Typography variant="body2">Transparent, community-driven development. Fork, contribute, and make it yours.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Card variant="outlined">
+            <CardContent sx={{ textAlign: 'center' }}>
+              <StorageIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />
+              <Typography variant="h6" gutterBottom>Scalable</Typography>
+              <Typography variant="body2">Handles your photo library, big or small. Built for performance and reliability.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Card variant="outlined">
+            <CardContent sx={{ textAlign: 'center' }}>
+              <PublicIcon color="primary" sx={{ fontSize: 40, mb: 1 }} />
+              <Typography variant="h6" gutterBottom>Decentralized</Typography>
+              <Typography variant="body2">Your photos, your control—no central authority. Host and share on your terms.</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      </Grid>
+
+      <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap', mb: 4 }}>
+        <Button variant="contained" size="large" href="#view">View Your Photos</Button>
+        <Button variant="contained" size="large" href="#upload">Upload Photos</Button>
+        <Button variant="outlined" size="large" href="https://github.com/your-repo" target="_blank" rel="noopener">Contribute</Button>
+        <Button variant="outlined" size="large" href="#learn">Learn More</Button>
+      </Box>
+
+      <Box component="footer" sx={{ textAlign: 'center', mt: 6, color: 'text.secondary' }}>
+        Made with <span aria-label="love">❤️</span> by the open source community
+      </Box>
+    </Container>
   );
 }
